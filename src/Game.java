@@ -9,6 +9,7 @@ public class Game {
 		System.out.println("Enter number of player : ");
 		Scanner sc = new Scanner(System.in);
 		int p = sc.nextInt();
+		Deque <Player> players = new LinkedList<>();
 		
 		for(int i=0 ; i<p ; i++)
 		{
@@ -18,7 +19,9 @@ public class Game {
 			s.setName(name);
 			System.out.println("Enter ID: ");
 			int id = sc.nextInt();
-			s.setId(id); 	
+			s.setId(id); 
+			s.curr = 0;
+			players.add(s);
 		}
 
 		// Board Size
@@ -28,7 +31,7 @@ public class Game {
 		// Adding Ladder
 		System.out.println("Enter number of Ladder : ");
 		int l = sc.nextInt();
-
+		
 		for(int i=0 ; i<l ; i++)
 		{
 			Ladder lad = new Ladder();
@@ -46,27 +49,27 @@ public class Game {
 				lad.setDest(end);
 			}
 		}
+
+		
 		
 		// Adding Snake
 		System.out.println("Enter number of Snake : ");
 		int sn = sc.nextInt();
-
 		for(int i=0 ; i<sn ; i++)
+		{
+			Snake snake = new Snake();
+			System.out.println("Enter Starting Point: ");
+			int start = sc.nextInt();
+			System.out.println("Enter Ending Point: ");
+			int end = sc.nextInt();
+			if( start < 1 && start>= size && end < 1 && end>= size && start < end)
 			{
-				Snake snake = new Snake();
-				System.out.println("Enter Starting Point: ");
-				int start = sc.nextInt();
-				System.out.println("Enter Ending Point: ");
-				int end = sc.nextInt();
-				if( start < 1 && start>= size && end < 1 && end>= size && start < end)
-				{
-					System.out.println("Please Enter Correct Value");
-				}
-				else
-				{
-					snake.setDest(start);
-					snake.setDest(end);	
-				}
+				System.out.println("Please Enter Correct Value");
+			}
+			else
+			{
+				snake.setDest(start);
+				snake.setDest(end);	
 			}
 		
 		
@@ -78,6 +81,7 @@ public class Game {
 		
 		
 		System.out.println("Lets Game Begin");
+		
 	}
 
 }

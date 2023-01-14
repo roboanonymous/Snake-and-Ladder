@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Ladder {
 
@@ -16,5 +17,6 @@ public class Ladder {
 	public void setDest(int dest) {
 		this.dest = dest;
 	}
+	
 	
 }

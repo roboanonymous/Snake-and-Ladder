@@ -3,7 +3,13 @@ public class Player {
 
 	private String name ;
 	private int id;
-	
+	int curr;
+	public int getCurr() {
+		return curr;
+	}
+	public void setCurr(int curr) {
+		this.curr = curr;
+	}
 	public String getName() {
 		return name;
 	}

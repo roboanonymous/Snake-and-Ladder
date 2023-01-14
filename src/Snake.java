@@ -1,4 +1,4 @@
-
+import java.util.*;
 public class Snake {
 
 	private int start;
@@ -16,5 +16,9 @@ public class Snake {
 	public void setDest(int dest) {
 		this.dest = dest;
 	}
+	
+ }
+		
+	
 	
 }
